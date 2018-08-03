@@ -1,4 +1,4 @@
-# Why People really quit their jobs?
+# Why People Really Quit Their Jobs?
 
 ### Master's End Project in KSchool - VII Edition -
 
@@ -11,11 +11,13 @@ The project will be addressed to analize and understand in detail:
  - #### **why are our best and most experienced employees leaving prematurely?**
  - #### **using machine learning tools, try to predict which valuable employees will leave next**
 
+# Personal Motivation
+HR theme has always interested me so, I have done my best to include it and address this project to. Although it has not been easy to find HR information, I feel confortable with the dataset and very excited.
+
 # Data Description
 For HR analysis it will use a popular dataset called: "HR_comma_sep.csv"
 
-# Brief description of columns in DataSet:
-satisfaction_level,last_evaluation,number_project,average_montly_hours,time_spend_company,Work_accident,left,promotion_last_5years,sales,salary
+## Brief description of columns in DataSet:
 
 - **Satisfaction_level** :Employee satisfaction level
 
