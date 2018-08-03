@@ -8,14 +8,14 @@ In order to retain highly talented individuals, many companies spend a great amo
 
 The project will be addressed to analize and understand in detail: 
 
- - #### **why are our best and most experienced employees leaving prematurely?**
- - #### **using machine learning tools, try to predict which valuable employees will leave next**
+ - #### **What is the profile of the employees that are leaving prematurely their jobs?**
+ - #### **Using machine learning tools, try to predict which valuable employees will leave next**
 
 # Personal Motivation
 HR theme has always interested me so, I have done my best to include it and address this project to. Although it has not been easy to find HR information, I feel confortable with the dataset and very excited.
 
 # Data Description
-For HR analysis it will use a popular dataset called: "HR_comma_sep.csv"
+For HR analysis it will use a popular dataset called: "HR_comma_sep.csv" . Its size: 
 
 ## Brief description of columns in DataSet:
 
@@ -35,7 +35,7 @@ For HR analysis it will use a popular dataset called: "HR_comma_sep.csv"
 
 - **promotion_last_5years**: Whether employees have had a promotion in the last 5 years
 
-- **Sales**: Shows the different areas or departments. It may indicate that sales is the one with the largest number of employees: sales, Technical, Support, IT, Product Managment, Marketing ,Accounting, Human Resources, Managment and Others.
+- **Sales**: Shows the different areas or departments. It may indicate that sales is the one with the largest number of employees: Sales, Technical, Support, IT, Product Managment, Marketing ,Accounting, Human Resources, Managment and Others.
 
 - **Salary**: Classified by Low, Medium, High
 
