@@ -31,9 +31,9 @@ _note: some columns appear without description due to no further information fou
 
 - **time_spend_company**: The data ranges from 1 to 10. Data unit not specified.
 
-- **Work_accident**: whether the employee had a workplace accident,: 1 yes, 0 no.
+- **Work_accident**: Whether the employee had a workplace accident,: 1 yes, 0 no.
 
-- **left**: Whether the employee has left or not the company**: 1 yes, 0 no.
+- **left**: Whether the employee has left or not the company: 1 yes, 0 no.
 
 - **promotion_last_5years**: Whether the employee has had a promotion in the last 5 years.
 
