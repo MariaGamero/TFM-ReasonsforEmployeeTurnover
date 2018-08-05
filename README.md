@@ -21,24 +21,24 @@ For HR analysis it will use a popular dataset called: "HR_comma_sep.csv" . Raw s
 ## Brief description of columns in DataSet:
 _note: some columns appear without description due to no further information found or decryption impossible to deduce at a glance_
 
-- **Satisfaction_level** :Employee satisfaction level
+- **Satisfaction_level** : Level of satisfaction on the employee. It has a rather subjective character and should be strongly correlated with the fact of leaving or not the company.
 
-- **Last_evaluation**: column can be used to evaluate the performance of an employee. The data ranges from 0–1, 0 being low performance and 1 being the highest. Using a 0.1 interval let us try and see the employees in the company are doing and how it is correlated to them leaving the company.
+- **Last_evaluation**: Column can be used to evaluate the performance of an employee. The data ranges from 0–1, 0 being low performance and 1 being the highest.
 
 - **Number_projects**
 
 - **average_montly_hours**
 
-- **time_spend_company**
+- **time_spend_company**: The data ranges from 1 to 10. Data unit not specified.
 
-- **Work_accident**: Whether the employee has had a work accident: 1 yes, 0 no
+- **Work_accident**: Whether the employee has had a work accident: 1 yes, 0 no.
 
-- **left** Whether the employee has left or not the company**: 1 yes, 0 no
+- **left** Whether the employee has left or not the company**: 1 yes, 0 no.
 
-- **promotion_last_5years**: Whether the employee has had a promotion in the last 5 years
+- **promotion_last_5years**: Whether the employee has had a promotion in the last 5 years.
 
 - **Sales**: It seems to indicate the different areas or departments the employees belong: Sales, Technical, Support, IT, Product Managment, Marketing ,Accounting, Human Resources, Managment and Others.
 
-- **Salary**: Classified by Low, Medium, High
+- **Salary**: Classified by Low, Medium, High.
 
 
