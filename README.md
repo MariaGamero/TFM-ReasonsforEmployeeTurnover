@@ -9,8 +9,8 @@ In order to retain highly talented individuals, many companies spend a great amo
 
 The project will be addressed to analize and understand in detail: 
 
- - #### **What is the profile of the employees that are leaving prematurely their jobs?**
- - #### **Using machine learning tools, try to predict which valuable employees will leave next**
+ - #### **What is the profile of the employees that are leaving their jobs?**
+ - #### **Using machine learning tools, try to predict which employees will leave next**
 
 # Personal Motivation
 HR theme has always interested me so, I have done my best to include it and address this project to. Although it has not been easy to find HR information, I feel confortable with the dataset and very excited.
