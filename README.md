@@ -9,7 +9,8 @@ In order to retain highly talented individuals, many companies spend a great amo
 
 The project will be addressed to analize and understand in detail: 
 
- - #### **What is the profile of the employees that are leaving their jobs?**
+ - #### **Analyze what are the features of the employees who leave the company**
+ - #### **From the point of view of the company, detect which are the ones that the company is interested in retaining**
  - #### **Using machine learning tools, try to predict which employees will leave next**
 
 # Personal Motivation
