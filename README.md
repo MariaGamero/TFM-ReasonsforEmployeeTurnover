@@ -43,6 +43,14 @@ _note: some columns appear without description due to no further information fou
 - **Salary**: Salary level classified by Low, Medium, High.
 
 
-# Headcount segmentation:
-the aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. For the analysis, I will use Clustering K-means in R.
+# The study case is divided as follows:
+
+## 1. Load the dataset, scrubbing and explore the data by making some visualizations 
+_Methodology: python_
+
+## 2. Headcount segmentation:
+The aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. 
+
+_Methodology_: For the analysis, I will use Clustering K-means in R.
+
 Using classification or clustering methods in HR, companies improve their headcount base, can work on target areas, and segment employees based on performance history, evlauations, interests, or satisfaction level monitoring.  
