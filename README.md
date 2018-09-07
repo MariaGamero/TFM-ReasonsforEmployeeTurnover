@@ -17,7 +17,7 @@ The project will be addressed to analize and understand in detail:
 HR theme has always interested me so, I have done my best to include it and address this project to. Although it has not been easy to find HR information, I feel confortable with the dataset and very excited.
 
 # Data Description
-For HR analysis it will use a popular dataset called: "HR_comma_sep.csv" . Raw size: 14999 rows and 10 columns
+For HR analysis it will use a popular dataset called: "HR_data_origin.csv" . Raw size: 14999 rows and 10 columns
 
 ## Brief description of columns in DataSet:
 _note: some columns appear without description due to no further information found or decryption impossible to deduce at a glance_
@@ -43,6 +43,6 @@ _note: some columns appear without description due to no further information fou
 - **Salary**: Salary level classified by Low, Medium, High.
 
 
-## Headcount segmentation:
+# Headcount segmentation:
 the aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. For the analysis, I will use Clustering K-means in R.
 Using classification or clustering methods in HR, companies improve their headcount base, can work on target areas, and segment employees based on performance history, evlauations, interests, or satisfaction level monitoring.  
