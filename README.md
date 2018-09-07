@@ -57,4 +57,4 @@ The aim is to segregate groups with similar traits and assign them into clusters
 
 _Methodology: for the analysis, I will use Clustering K-means in R._
 
-Using classification or clustering methods in HR, companies improve their headcount base, can work on target areas, and segment employees based on performance history, evlauations, interests, or satisfaction level monitoring.  
+Using classification or clustering methods in HR, companies can work on target areas, even segment employees based on performance history, evaluations or satisfaction level monitoring, avoiding posible future "brain drain".
