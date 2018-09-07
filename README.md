@@ -46,7 +46,8 @@ _note: some columns appear without description due to no further information fou
 
 # The study case is divided as follows:
 
-## 1. Load the dataset, scrub and explore the data by making some visualizations 
+## 1. Load the dataset, scrub and explore the data by making some basic visualizations 
+The target is to understand the data and be sure that I am working with cleaned data — data that is organized, complete, recent, and generally high quality.
 _Methodology: python_
 
 ## 2. Headcount segmentation:
