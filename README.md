@@ -17,7 +17,8 @@ The project will be addressed to analize and understand in detail:
 HR theme has always interested me so, I have done my best to include it and address this project to. Although it has not been easy to find HR information, I feel confortable with the dataset and very excited.
 
 # Data Description
-For HR analysis it will use a popular dataset called: "HR_data_origin.csv" . Raw size: 14999 rows and 10 columns
+For HR analysis it will use a popular dataset called: "HR_comma_sep.csv". From now on : "HR_data_origin.csv". 
+Raw size: 14999 rows and 10 columns
 
 ## Brief description of columns in DataSet:
 _note: some columns appear without description due to no further information found or decryption impossible to deduce at a glance_
@@ -45,7 +46,7 @@ _note: some columns appear without description due to no further information fou
 
 # The study case is divided as follows:
 
-## 1. Load the dataset, scrubbing and explore the data by making some visualizations 
+## 1. Load the dataset, scrub and explore the data by making some visualizations 
 _Methodology: python_
 
 ## 2. Headcount segmentation:
