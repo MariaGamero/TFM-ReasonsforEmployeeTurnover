@@ -18,6 +18,7 @@ HR theme has always interested me so, I have done my best to include it and addr
 
 # Data Description
 For HR analysis it will use a popular dataset called: "HR_comma_sep.csv". From now on : "HR_data_origin.csv". 
+
 Raw size: 14999 rows and 10 columns
 
 ## Brief description of columns in DataSet:
@@ -49,11 +50,11 @@ _note: some columns appear without description due to no further information fou
 ## 1. Load the dataset, scrub and explore the data by making some basic visualizations 
 To understand the information included in the dataset and be sure that I am working with cleaned data — data that is organized, complete, recent, and generally high quality.
 
-_Methodology: python_
+_Methodology: Python_
 
 ## 2. Headcount segmentation:
 The aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. 
 
-_Methodology_: For the analysis, I will use Clustering K-means in R.
+_Methodology: for the analysis, I will use Clustering K-means in R._
 
 Using classification or clustering methods in HR, companies improve their headcount base, can work on target areas, and segment employees based on performance history, evlauations, interests, or satisfaction level monitoring.  
