@@ -22,7 +22,6 @@ For HR analysis it will use a popular dataset called: "HR_comma_sep.csv". From n
 Raw size: 14999 rows and 10 columns
 
 ## Brief description of columns in DataSet:
-_note: some columns appear without description due to no further information found or decryption impossible to deduce at a glance_
 
 - **Satisfaction_level** : Level of satisfaction on the employee. It has a rather subjective character and should be strongly correlated with the fact of leaving or not the company.
 
