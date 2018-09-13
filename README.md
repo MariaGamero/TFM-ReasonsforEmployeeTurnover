@@ -16,7 +16,7 @@ The project will be addressed to analize and understand in detail:
  - #### **Using machine learning tools, try to predict whether the employee will leave the company or not**
 
 # Personal Motivation
-I have always been interested in themes related to human relations so, I have done my best to include and address it this project to. Although it has not been easy to find HR information the truth is that I feel confortable with the dataset and also very excited. 
+I have always been interested in themes related to human relations so, I have done my best to be able to address it in this project. Although it has not been easy to find HR information the truth is that I feel confortable with the dataset and also very excited. 
 
 # Data Description
 For HR analysis it will use a popular dataset called: "HR_comma_sep.csv". From now on : "HR_data_origin.csv". 
