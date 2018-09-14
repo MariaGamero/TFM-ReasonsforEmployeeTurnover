@@ -18,34 +18,6 @@ The project will be addressed to analize and understand in detail:
 # Personal Motivation
 I have always been interested in themes related to human relations so, I have done my best to be able to address it in this project. Although it has not been easy to find HR information the truth is that I feel confortable with the dataset and also very excited. 
 
-# Data Description
-For HR analysis it will use a popular dataset called: "HR_comma_sep.csv". From now on : "HR_data_origin.csv". 
-
-Raw size: 14999 rows and 10 columns
-
-## Brief description of columns in DataSet:
-
-- **Satisfaction_level** : Level of employee satisfaction with their work and position. At first, it ties closely with employee turnover. 
-
-- **Last_evaluation**: Column can be used to evaluate the performance of an employee. The data ranges from 0–1, 0 being low performance and 1 being the highest.
-
-- **Number_projects**: number of projects employees done.
-
-- **average_montly_hours**: average monthly hours per employee.
-
-- **time_spend_company**: The data ranges from 1 to 10. Data unit not specified. It will be supposed _years_.
-
-- **Work_accident**: Whether the employee had a workplace accident,: 1 yes, 0 no.
-
-- **left**: Whether the employee has left or not the company: 1 yes, 0 no.
-
-- **promotion_last_5years**: Whether the employee has had a promotion in the last 5 years.
-
-- **Sales**: It seems to indicate the different areas or departments the employees belong: Sales, Technical, Support, IT, Product Managment, Marketing ,Accounting, Human Resources, Managment and Others.
-
-- **Salary**: Salary level classified by Low, Medium, High.
-
-
 # The study case is divided as follows:
 
 ## 1. Load the dataset, scrub and explore the data by making some basic visualizations 
