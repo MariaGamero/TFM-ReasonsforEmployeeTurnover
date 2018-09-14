@@ -25,7 +25,7 @@ Raw size: 14999 rows and 10 columns
 
 ## Brief description of columns in DataSet:
 
-- **Satisfaction_level** : Level of satisfaction on the employee. It has a rather subjective character and should be strongly correlated with the fact of leaving or not the company.
+- **Satisfaction_level** : Level of employee satisfaction with their work and position. At first, it ties closely with employee turnover. 
 
 - **Last_evaluation**: Column can be used to evaluate the performance of an employee. The data ranges from 0–1, 0 being low performance and 1 being the highest.
 
@@ -33,7 +33,7 @@ Raw size: 14999 rows and 10 columns
 
 - **average_montly_hours**: average monthly hours per employee.
 
-- **time_spend_company**: The data ranges from 1 to 10. Data unit not specified.
+- **time_spend_company**: The data ranges from 1 to 10. Data unit not specified. It will be supposed _years_.
 
 - **Work_accident**: Whether the employee had a workplace accident,: 1 yes, 0 no.
 
