@@ -25,7 +25,7 @@ To understand the information included in the dataset and be sure that I am work
 
 - _Programming languaje_: Python
 
-## 2. Headcount segmentation:
+## 2. Data Mining with R: 
 The aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. 
 
 - _Programming languaje_: R
