@@ -41,7 +41,7 @@ hr_data$work_accident <-factor(work_accident,levels=c(0,1),
 ##### 5. Analysis thought some visualization  #####
 
 # Graph1: Salary by Department
-salary_by_department <- ggplot(hr_data,aes(x=salary, fill=salary))+
+Employees_by_salary_range <- ggplot(hr_data,aes(x=salary, fill=salary))+
   geom_bar(width = .7)+
   facet_grid(left~department)+
   theme(legend.position="right")+
@@ -51,36 +51,47 @@ salary_by_department <- ggplot(hr_data,aes(x=salary, fill=salary))+
   theme(axis.text.x = element_text(angle = 50, hjust = 1))
 
   #Saving
-  ggsave("salary_by_department.jpg",width = 12, height = 8)
+  ggsave("Employees_by_salary_range.jpg",width = 12, height = 8)
 
 #Graph 2: Distribution of Level of satisfaction
-ggplot(hr_data, aes(satisfaction_level)) +
+  Distribution_of_level_of_satisfaction <- ggplot(hr_data, aes(satisfaction_level)) +
   geom_histogram(fill = 'lightblue') +
   xlab('Nivel de Satisfacción') +
   ylab('') +
   labs(title = 'Graph 2: Distribution of Level of satisfaction')
 
+  #Saving
+  ggsave("Distribution_of_level_of_satisfaction.jpg",width = 12, height = 8)
+
 #Graph 3: Level of satisfaction by salary
-ggplot(hr_data, aes(satisfaction_level)) +
+  Distribution_level_of_satisfaction_by_salary<- ggplot(hr_data, aes(satisfaction_level)) +
   geom_histogram(aes(fill = salary)) +
   xlab('Nivel de Satisfacción')+ ylab(' ')+
   scale_fill_manual(values = c('orange1', 'lightblue1', 'darkblue'))+
-  labs(title = 'Graph 4: Level of satisfaction by salary')
+  labs(title = 'Graph 3: Level of satisfaction by salary')
 
+  #Saving
+  ggsave("Distribution_level_of_satisfaction_by_salary.jpg",width = 12, height = 8)
 
-#Graph 4: Level of satisfaction by people who left vs. people who stay
-ggplot(hr_data, aes(satisfaction_level)) +
+#Graph 4: Distribution of level of satisfaction by people who left vs. people who stay
+  Distribution_of_level_of_satisfaction_people_who_left_or_stay<- ggplot(hr_data, aes(satisfaction_level)) +
   geom_histogram(aes(fill = left)) +
   xlab('Nivel de Satisfacción')+ ylab(' ')+
   scale_fill_manual(values = c('aquamarine2', 'blue3'))+
   labs(title = 'Graph 4: Level of satisfaction by salary')
 
+  #Saving
+  ggsave("Distribution_of_level_of_satisfaction_people_who_left_or_stay.jpg",width = 12, height = 8)
+
 
 #Graph 5: Level of satisfaction by department
-ggplot(hr_data)+
+  Level_of_satisfaction_by_department<- ggplot(hr_data)+
   aes(x=department,y=satisfaction_level,col=department)+
   geom_boxplot()+
   ggtitle('Graph 5: Level of satisfaction by department')+
   ylab('satisfaction level')
+  
+  #Saving
+  ggsave("Level_of_satisfaction_by_department.jpg",width = 12, height = 8)
 
 
