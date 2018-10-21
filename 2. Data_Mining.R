@@ -1,7 +1,7 @@
 ## -------------------------------------------------------------------------
-##       PARTE 2: CLUSTERING kMEANS
+##             TFM - REASONS FOR TURNOVER EMPLOYEES -
 ## -------------------------------------------------------------------------
-
+##                 PART 2: CLUSTER ANALYSIS
 ## -------------------------------------------------------------------------
 ##### 1. Import Libraries #####
 
@@ -9,6 +9,8 @@ if(!require("dummies")){
   install.packages("dummies")
   library("dummies")
 }
+library(dplyr)
+library(ggplot2)
 
 # set as working directory 
 setwd("~/TFM/TFM_TurnOver_Ratio")
@@ -25,8 +27,21 @@ head(hr_data)
 summary(hr_data)
 
 ## -------------------------------------------------------------------------
-##### 4. Tratamiento de las variables #####
-hr_data_numericos=dummy.data.frame(hr_data, dummy.class="character" )
+##### 4. Filtering by employees who left #####
+
+#Let´s focus on the employees who left.
+people_who_leave <- hr_data %>% 
+  filter(left==1)
+
+people_who_leave <- people_who_leave[ ,!colnames(people_who_leave)=="left"]
+
+str(people_who_leave)
+head(people_who_leave)
+summary(people_who_leave)
+
+## -------------------------------------------------------------------------
+##### 4. Variables Treatment #####
+people_who_leave_numericos=dummy.data.frame(people_who_leave, dummy.class="character" )
 
 
 ## -------------------------------------------------------------------------
@@ -36,31 +51,35 @@ hr_data_numericos=dummy.data.frame(hr_data, dummy.class="character" )
 #The goal is to choose a small value of "k" that still has a low sum of squared errors, 
 #and the elbow usually represents where we start to have diminishing returns by increasing k.
 
-Intra <- (nrow(hr_data_numericos)-1)*sum(apply(hr_data_numericos,2,var))
-for (i in 2:15) Intra[i] <- sum(kmeans(hr_data_numericos, centers=i)$withinss)
+Intra <- (nrow(people_who_leave_numericos)-1)*sum(apply(people_who_leave_numericos,2,var))
+for (i in 2:15) Intra[i] <- sum(kmeans(people_who_leave_numericos, centers=i)$withinss)
 plot(1:15, Intra, type="b", xlab="Numero de Clusters", ylab="Suma de Errores intragrupo")
 
-#As can be seen from the graph, at k = 3 the elbow appears, indicating that 3 is the best number of clusters.
+#Graph shows that at k = 3 the elbow appears, indicating that 3 is the best number of clusters.
 
 
 ## -------------------------------------------------------------------------
-##### 5. Segmentation mediante Modelo RFM 12M  #####
+##### 6. Model Segmentation RFM 12M  #####
 
-hr_dataScaled=scale(hr_data_numericos)
+people_who_leaveScaled=scale(people_who_leave_numericos)
 
 #K-means is a simple unsupervised machine learning algorithm that groups a dataset 
 #into a user-specified number (k) of clusters.
 
 NUM_CLUSTERS=3
 set.seed(1234)
-Modelo=kmeans(hr_dataScaled,NUM_CLUSTERS)
+Modelo=kmeans(people_who_leaveScaled,NUM_CLUSTERS)
 
-hr_data$Segmentos=Modelo$cluster
-hr_data_numericos$Segmentos=Modelo$cluster
+people_who_leave$Segmentos=Modelo$cluster
+people_who_leave_numericos$Segmentos=Modelo$cluster
 
-table(hr_data_numericos$Segmentos)
+table(people_who_leave_numericos$Segmentos)
 
-aggregate(hr_data_numericos, by = list(hr_data_numericos$Segmentos), mean)
+aggregate(people_who_leave_numericos, by = list(people_who_leave_numericos$Segmentos), mean)
 
+## -------------------------------------------------------------------------
+##### 7. Visual Representation  #####
 
+ggplot(people_who_leave_numericos,aes(x=satisfaction_level,y=last_evaluation,color=Segmentos))+
+  geom_point(size=2)
 
