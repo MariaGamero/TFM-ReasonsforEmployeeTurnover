@@ -9,12 +9,14 @@ if(!require("dummies")){
   install.packages("dummies")
   library("dummies")
 }
+
 library(dplyr)
 library(ggplot2)
 
 # set as working directory 
 setwd("~/TFM/TFM_TurnOver_Ratio")
 
+## -------------------------------------------------------------------------
 ##### 2. Loading Data #####
 
 hr_data <- read.csv("data/HR_data_cleaned.csv",stringsAsFactors = FALSE)
@@ -40,12 +42,12 @@ head(people_who_leave)
 summary(people_who_leave)
 
 ## -------------------------------------------------------------------------
-##### 4. Variables Treatment #####
+##### 5. Variables Treatment #####
 people_who_leave_numericos=dummy.data.frame(people_who_leave, dummy.class="character" )
 
 
 ## -------------------------------------------------------------------------
-##### 5. Determine the optimal number of clusters (Elbow Method) #####
+##### 6. Determine the optimal number of clusters (Elbow Method) #####
 
 #One method to validate the number of clusters is the elbow method. 
 #The goal is to choose a small value of "k" that still has a low sum of squared errors, 
@@ -59,7 +61,7 @@ plot(1:15, Intra, type="b", xlab="Numero de Clusters", ylab="Suma de Errores int
 
 
 ## -------------------------------------------------------------------------
-##### 6. Model Segmentation RFM 12M  #####
+##### 7. Model Segmentation RFM 12M  #####
 
 people_who_leaveScaled=scale(people_who_leave_numericos)
 
@@ -78,8 +80,15 @@ table(people_who_leave_numericos$Segmentos)
 aggregate(people_who_leave_numericos, by = list(people_who_leave_numericos$Segmentos), mean)
 
 ## -------------------------------------------------------------------------
-##### 7. Visual Representation  #####
+##### 7. Visual Representation and conclusions #####
 
-ggplot(people_who_leave_numericos,aes(x=satisfaction_level,y=last_evaluation,color=Segmentos))+
+ClusterGraph <- ggplot(people_who_leave_numericos,aes(x=satisfaction_level,y=last_evaluation,color=Segmentos))+
   geom_point(size=2)
+
+#high satisfaction level and high performance: people well valorated and valious for company.
+#low satisfaction level and low performance: company are not interested on them.
+#low satisfation level and high performance: fustrated people at work.
+
+#Saving
+ggsave("ClusterGraph.jpg",width = 12, height = 8)
 
