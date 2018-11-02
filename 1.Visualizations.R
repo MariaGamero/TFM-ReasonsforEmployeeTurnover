@@ -78,7 +78,7 @@ Employees_by_salary_range <- ggplot(hr_data,aes(x=salary, fill=salary))+
   geom_histogram(aes(fill = left)) +
   xlab('Nivel de Satisfacción')+ ylab(' ')+
   scale_fill_manual(values = c('aquamarine2', 'blue3'))+
-  labs(title = 'Graph 3: Level of satisfaction by salary')
+  labs(title = 'Graph 3: Level of satisfaction by type of employee')
 
   #Saving
   ggsave("Distribution_of_level_of_satisfaction_people_who_left_or_stay.jpg",width = 12, height = 8)
@@ -93,5 +93,14 @@ Employees_by_salary_range <- ggplot(hr_data,aes(x=salary, fill=salary))+
   
   #Saving
   ggsave("Level_of_satisfaction_by_department.jpg",width = 12, height = 8)
-
+  
+# Graph 5: Time spend at the company
+  Time_spent_at_the_company <- ggplot(hr_data,aes(x=time_spend_company,fill=left))+
+    geom_bar(width = .7)+
+    facet_grid(~left)+
+    xlab("Years")+ ylab("Number of Employees")+
+    ggtitle("Graph 5. Time spent at company")
+  
+    #Saving
+    ggsave("Time_spent_at_the_company.jpg",width = 12, height = 8)
   
