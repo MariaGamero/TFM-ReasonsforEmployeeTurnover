@@ -31,12 +31,17 @@ summary(hr_data)
 ## -------------------------------------------------------------------------
 ##### 4. Filtering by employees who left #####
 
-#Let´s focus on the employees who left.
+#Company is interested in knowing the type of employees who left the company
+#in order to determine which are the most valuables and so, the ones it has to retain.
+
+#Let´s start filtering by employees who left the company: 
 people_who_leave <- hr_data %>% 
   filter(left==1)
 
+#Now, I can extract the column "left" in the analysis.
 people_who_leave <- people_who_leave[ ,!colnames(people_who_leave)=="left"]
 
+#Quick review of this new DataSet
 str(people_who_leave)
 head(people_who_leave)
 summary(people_who_leave)
@@ -84,11 +89,21 @@ aggregate(people_who_leave_numericos, by = list(people_who_leave_numericos$Segme
 
 ClusterGraph <- ggplot(people_who_leave_numericos,aes(x=satisfaction_level,y=last_evaluation,color=Segmentos))+
   geom_point(size=2)
+ClusterGraph 
 
-#high satisfaction level and high performance: people well valorated and valious for company.
-#low satisfaction level and low performance: company are not interested on them.
-#low satisfation level and high performance: fustrated people at work.
+#The graph shows 3 distinct clusters for employees who left the company:
+
+  #1.High satisfaction level and high performance: people well valorated and valious for company. 
+  #Company should focus on them. Reasons for leaving: probably they found a better job opportunity
+
+
+  #2.Low satisfaction level and low performance: company are not interested on them. Reasons for leaving: frustration. 
+  #Probably they don´t feel well valorated for their jobs and that's why are not happy.
+
+  #3.Low satisfaction level and high performance: Company should focus on this group. 
+  #A heavy workload can be a source of stress. #Reasons for leaving: probably employees are overloaded.
 
 #Saving
 ggsave("ClusterGraph.jpg",width = 12, height = 8)
+
 
