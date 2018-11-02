@@ -1,16 +1,25 @@
 ## -------------------------------------------------------------------------
-##       VISUALIZATIONS
+##             TFM - REASONS FOR TURNOVER EMPLOYEES -
 ## -------------------------------------------------------------------------
+##                 PART 1: VISUALIZATIONS
+
 
 ## -------------------------------------------------------------------------
 ##### 1. Import Libraries #####
 
-install.packages("tidyverse")
-library(tidyverse)
+if (!require("tidyverse")){
+  install.packages("tidyverse")
+  library("tidyverse")
+}
+if (!require("ggplot2")){
+  install.packages("ggplot2")
+  library("ggplot2")
+}
 
 # set as working directory 
 setwd("~/TFM/TFM_TurnOver_Ratio/1.visualizations")
 
+## -------------------------------------------------------------------------
 ##### 2. Loading Data #####
 
 hr_data <- read.csv("data/HR_data_cleaned.csv",stringsAsFactors = FALSE)
@@ -34,7 +43,7 @@ hr_data$promotion_last_5years <- factor(hr_data$promotion_last_5years,levels=c(0
                          labels=c("Not Promoted","Promoted")) 
 
 hr_data$work_accident <- as.factor(hr_data$work_accident)
-hr_data$work_accident <-factor(work_accident,levels=c(0,1),
+hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
                             labels=c("No Accident","Accident")) 
 
 ## -------------------------------------------------------------------------
@@ -62,36 +71,27 @@ Employees_by_salary_range <- ggplot(hr_data,aes(x=salary, fill=salary))+
 
   #Saving
   ggsave("Distribution_of_level_of_satisfaction.jpg",width = 12, height = 8)
+   
 
-#Graph 3: Level of satisfaction by salary
-  Distribution_level_of_satisfaction_by_salary<- ggplot(hr_data, aes(satisfaction_level)) +
-  geom_histogram(aes(fill = salary)) +
-  xlab('Nivel de Satisfacción')+ ylab(' ')+
-  scale_fill_manual(values = c('orange1', 'lightblue1', 'darkblue'))+
-  labs(title = 'Graph 3: Level of satisfaction by salary')
-
-  #Saving
-  ggsave("Distribution_level_of_satisfaction_by_salary.jpg",width = 12, height = 8)
-
-#Graph 4: Distribution of level of satisfaction by people who left vs. people who stay
+#Graph 3: Distribution of level of satisfaction by people who left vs. people who stay
   Distribution_of_level_of_satisfaction_people_who_left_or_stay<- ggplot(hr_data, aes(satisfaction_level)) +
   geom_histogram(aes(fill = left)) +
   xlab('Nivel de Satisfacción')+ ylab(' ')+
   scale_fill_manual(values = c('aquamarine2', 'blue3'))+
-  labs(title = 'Graph 4: Level of satisfaction by salary')
+  labs(title = 'Graph 3: Level of satisfaction by salary')
 
   #Saving
   ggsave("Distribution_of_level_of_satisfaction_people_who_left_or_stay.jpg",width = 12, height = 8)
 
 
-#Graph 5: Level of satisfaction by department
+#Graph 4: Level of satisfaction by department
   Level_of_satisfaction_by_department<- ggplot(hr_data)+
   aes(x=department,y=satisfaction_level,col=department)+
   geom_boxplot()+
-  ggtitle('Graph 5: Level of satisfaction by department')+
+  ggtitle('Graph 4: Level of satisfaction by department')+
   ylab('satisfaction level')
   
   #Saving
   ggsave("Level_of_satisfaction_by_department.jpg",width = 12, height = 8)
 
-
+  
