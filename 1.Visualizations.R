@@ -78,9 +78,8 @@ hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
 
 #Graph 3: Distribution of level of satisfaction by people who left vs. people who stay
   Distribution_of_level_of_satisfaction_people_who_left_or_stay<- ggplot(hr_data, aes(satisfaction_level)) +
-  geom_density(aes(fill = left),alpha=0.3) +
+  geom_density(aes(fill = left),alpha=0.5) +
   xlab('Satisfacion Level')+ ylab(' ')+
-  scale_fill_manual(values = c('aquamarine2', 'blue3'))+
   labs(title = 'Graph 3: Level of satisfaction by type of employee')
 
   #Saving
@@ -99,24 +98,23 @@ hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
   
 # Graph 5: Time spend at the company
   Time_spent_at_the_company <- ggplot(hr_data,aes(x=time_spend_company,fill=left))+
-    geom_bar(width = .7)+
-    facet_grid(~left)+
-    xlab("Years")+ ylab("Number of Employees")+
-    ggtitle("Graph 5. Time spent at company")
+  geom_bar(width = .7)+
+  facet_grid(~left)+
+  xlab("Years")+ ylab("Number of Employees")+
+  ggtitle("Graph 5. Time spent at company")
   
-    #Saving
-    ggsave("Time_spent_at_the_company.jpg",width = 12, height = 8)
+  #Saving
+  ggsave("Time_spent_at_the_company.jpg",width = 12, height = 8)
     
-    #CONCLUSIONS:
-    #Most people left the company after working among 2.5-5 years
+  #CONCLUSIONS:
+  #Most people left the company after working among 2.5-5 years
 
 
 #Graph 6: Distribution of Average monthly hours
     Average_monthly_hours_people_who_left_or_stay<- ggplot(hr_data, aes(average_montly_hours)) +
-      geom_density(aes(fill = left),alpha=0.3) +
-      xlab('Average monthly hours worked')+ ylab(' ')+
-      scale_fill_manual(values = c('aquamarine2', 'blue3'))+
-      labs(title = 'Graph 6: Average monthly hours by type of employee')
+    geom_density(aes(fill = left),alpha=0.5) +
+    xlab('Average monthly hours worked')+ ylab(' ')+
+    labs(title = 'Graph 6: Average monthly hours by type of employee')
     
     #Saving
     ggsave("Average_monthly_hours.jpg",width = 12, height = 8)
@@ -128,13 +126,28 @@ hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
   
 #Graph 7: Projects breakdown by type of employee
     Number_of_projects_by_type_of_employee <- ggplot(hr_data,aes(x=number_project,fill=left))+
-      geom_bar(width = .7)+
-      theme(legend.position="right")+
-      xlab("Number of projects")+ ylab("Number of Employees")+
-      ggtitle("Graph 7. Projects breakdown by type of employee")+
-      theme(axis.text.x = element_text(angle = 50, hjust = 1))
+    geom_bar(width = .7)+
+    theme(legend.position="right")+
+    xlab("Number of projects")+ ylab("Number of Employees")+
+    ggtitle("Graph 7. Projects breakdown by type of employee")+
+    theme(axis.text.x = element_text(angle = 50, hjust = 1))
     
     #Saving
     ggsave("Projects_breakdown_by_type_of_employee.jpg",width = 12, height = 8)
+
+#Graph 8: Distribution of employees performance
+    Distribution_of_employees_performance <- ggplot(hr_data,aes(x=last_evaluation))+
+    geom_density(aes(fill = left),alpha=0.5)+
+    theme(legend.position="right")+
+    xlab("last evaluation")+ ylab("Number of Employees")+
+    ggtitle("Graph 8. Distribution of employees performance")
+    
+    #Saving
+    ggsave("Distribution_of_employees_performance.jpg",width = 12, height = 8)
+    
+    #CONCLUSIONS:
+    #Those employees with a performance between 0.6 and 0.8  remained in the company.
+    #However, both employees with performance greater than 0.8 and employees with performance below 0.6, 
+    #tended to leave more of the company
     
     
