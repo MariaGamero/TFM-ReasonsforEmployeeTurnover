@@ -152,6 +152,6 @@ ClusterGraph
   #The company must also try to better understand this group of employees by offering, for example, more flexible forms of 
   #work that allow greater work-life balance for the employee  
 
-#Saving
+#Saving graph (See in "img" folder in Github)
 ggsave("ClusterGraph.jpg",width = 12, height = 8)
 
