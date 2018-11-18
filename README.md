@@ -34,7 +34,7 @@ The aim is to segregate groups with similar traits and assign them into clusters
 
 - _Programming languaje_: R
 
-Using classification or clustering methods in HR, companies can work on target areas or department, even segment employees based on performance history, evaluations or satisfaction level monitoring, avoiding possible future "brain drain".
+Using classification or clustering methods in HR, companies can work on target areas or departments, even segment employees based on performance, evaluations or satisfaction level monitoring, avoiding possible future "brain drain".
 
 ## 3. Machine Learning
 Using machine learning tools, I will try to predict whether the employee will leave the company or not indicating which is the best model to get it. 
