@@ -41,3 +41,11 @@ Using machine learning tools, I will try to predict whether the employee will le
 
 - _Programming languaje_: Python
 
+
+# Finally...
+
+Please note that the conclusions of the analysis have been included into each corresponding notebook/file. 
+
+This work was done with great effort and affection. I really hope you like it and enjoy it. 
+
+
