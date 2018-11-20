@@ -12,7 +12,7 @@ The reasons for leaving a job can be many and vary according to different factor
 The project will be addressed to analize and understand in detail: 
 
  - #### **Which are the features of the employees who leave the company**
- - #### **From the point of view of the company, detect which are the employees the company is interested in retaining**
+ - #### **Analysing the employees who left the job, detect which are the ones that the company is interested in retaining **
  - #### **Using machine learning tools, try to predict whether the employee will leave the company or not**
 
 # Personal Motivation
