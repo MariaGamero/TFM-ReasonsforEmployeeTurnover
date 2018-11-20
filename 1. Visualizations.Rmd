@@ -6,7 +6,7 @@ output: html_document
 ####             TFM - REASONS FOR TURNOVER EMPLOYEES -
 ## -------------------------------------------------------------------------
 
-### 1. Import Libraries #####
+### 1.1. Import libraries #####
 ```{r echo = FALSE, warning = FALSE}
 if (!require("ggplot2")){
   install.packages("ggplot2")
@@ -15,14 +15,14 @@ if (!require("ggplot2")){
 ```
 
 ## -------------------------------------------------------------------------
-### 2. Loading Data #####
+### 1.2. Loading data #####
 ```{r}
 hr_data <- read.csv("data/HR_data_cleaned.csv",stringsAsFactors = FALSE)
 ```
 
 
 ## -------------------------------------------------------------------------
-### 3. Quick review of DataSet #####
+### 1.3. Quick review of the dataSet #####
 
 ```{r}
 str(hr_data)
@@ -31,7 +31,7 @@ summary(hr_data)
 ```
 
 ## -------------------------------------------------------------------------
-### 4. Variables treatment  #####
+### 1.4. Variables treatment  #####
 ```{r}
 hr_data$left <- as.factor(hr_data$left)
 hr_data$left <- factor(hr_data$left,levels=c(0,1),
@@ -48,10 +48,10 @@ hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
 
 
 ## -------------------------------------------------------------------------
-### 5. Analysis thought some visualizations  #####
+### 1.5. Analysis through some visualizations  #####
 
 ## -------------------------------------------------------------------------
-#### 1.- Salary by Department
+#### 1.5.1.- Salary by department
 
 ```{r echo = FALSE, warning = FALSE}
 ggplot(hr_data,aes(x=salary, fill=salary))+
@@ -71,7 +71,7 @@ __Conclusions:__
   + Barley employees with high salaries left the company.
   
 ## -------------------------------------------------------------------------
-#### 2.- Distribution of Level of satisfaction
+#### 1.5.2.- Distribution of level of satisfaction
 
 
 ```{r echo = FALSE, warning = FALSE}
@@ -83,12 +83,12 @@ __Conclusions:__
 ggplot(hr_data, aes(satisfaction_level)) +
   geom_density(aes(fill = left),alpha=0.5) +
   xlab('Satisfacion Level')+ ylab(' ')+
-  labs(title = 'Graph 2.2: Level of satisfaction by type of employee')
+  labs(title = 'Level of satisfaction by type of employee')
 
 ggplot(hr_data)+
   aes(x=department,y=satisfaction_level,col=department)+
   geom_boxplot()+
-  ggtitle('Graph 4: Level of satisfaction by department')+
+  ggtitle('Level of satisfaction by department')+
   ylab('satisfaction level')
 
 ```
@@ -103,7 +103,7 @@ __Conclusions:__
   + There are no material differences among departments.
   
 ## -------------------------------------------------------------------------
-#### 3.- Time spend at the company
+#### 1.5.3.- Time spent at the company
 
 ```{r echo = FALSE, warning = FALSE}
 ggplot(hr_data,aes(x=time_spend_company,fill=left))+
@@ -118,7 +118,7 @@ __Conclusions:__
   + Most of the employees who stay in the company have been working for three years
  
 ## -------------------------------------------------------------------------
-#### 4.- Time spend at the company working (monthly)
+#### 1.5.4.- Time spent at the company working (monthly)
 
 ```{r echo = FALSE, warning = FALSE}
 ggplot(hr_data, aes(average_montly_hours)) +
@@ -134,7 +134,7 @@ __Conclusions:__
  + During the first two years of experience, employees barely leave the company. After that, the proportion of people         leaving the company is older and older. As the employees experience grows and passed the 6 year, they stop leaving.
 
 ## -------------------------------------------------------------------------
-#### 5.- Number of Projects done by employee
+#### 1.5.5.- Number of projects done by employee
 
 ```{r echo = FALSE, warning = FALSE}
 ggplot(hr_data,aes(x=number_project,fill=left))+
@@ -152,7 +152,7 @@ __Conclusions:__
  + Everybody with 7 projects counts left the company, probably they were overworked.
 
 ## -------------------------------------------------------------------------
-#### 6.- Performance distribution by employee
+#### 1.5.6.- Performance distribution by employee
 
 ```{r echo = FALSE, warning = FALSE}
 ggplot(hr_data,aes(x=last_evaluation))+
@@ -163,10 +163,10 @@ ggplot(hr_data,aes(x=last_evaluation))+
 
 __Conclusions:__
 
- + Those employees with a performance between 0.6 and 0.8  remained in the company.However, both employees with performance greater than 0.8 and employees with performance below 0.6, tended to leave more of the company. 
+ + Those employees with a performance level between 0.6 and 0.8  remained in the company.However, both employees with performance level greater than 0.8 and employees with performance level below 0.6, tended to leave more of the company. 
  
 ## -------------------------------------------------------------------------
-#### 7.- Performance distribution by Employee & Department
+#### 1.5.7.- Performance distribution by employee & department
 ```{r echo = FALSE, warning = FALSE}
 qplot(last_evaluation,data=hr_data,fill=department)+
       facet_grid(~left)+
@@ -175,7 +175,7 @@ qplot(last_evaluation,data=hr_data,fill=department)+
 
  
 ## -------------------------------------------------------------------------
-#### 8.- Work Accidents
+#### 1.5.8.- Work accidents
 
 ```{r echo = FALSE, warning = FALSE}
 
