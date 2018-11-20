@@ -27,7 +27,9 @@ To understand the information included in the dataset and be sure that I am work
 
 ## 1. Visualizations: 
 
-- _Programming languaje_: R Markdown published: http://rpubs.com/Gamer/441414
+- _Programming languaje_: R Markdown. 
+
+The result has been published in the following link: [RPubs](http://rpubs.com/Gamer/441414) publication.
 
 ## 2. Data Mining with R: 
 The aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. I will use k-means clustering. The graph resulted of the anaysis has been keeped into "img" folder.
