@@ -44,6 +44,7 @@ hr_data$work_accident <- as.factor(hr_data$work_accident)
 hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
                             labels=c("No Accident","Accident")) 
 
+
 ## -------------------------------------------------------------------------
 ##### 5. Analysis thought some visualization  #####
 
@@ -149,5 +150,6 @@ hr_data$work_accident <-factor(hr_data$work_accident,levels=c(0,1),
     #Those employees with a performance between 0.6 and 0.8  remained in the company.
     #However, both employees with performance greater than 0.8 and employees with performance below 0.6, 
     #tended to leave more of the company
+
     
     
