@@ -1,6 +1,6 @@
 # Why People Really Quit Their Jobs? 
 
-### Master's End Project in KSchool - VII Edition - 
+### Master's Final Thesis in KSchool - VII Edition - 
 #### by María Gamero
 
 # Study purpose
