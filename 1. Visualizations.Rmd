@@ -3,7 +3,7 @@ title: "1. VISUALIZATIONS"
 output: html_document
 ---
 ## -------------------------------------------------------------------------
-####             TFM - REASONS FOR TURNOVER EMPLOYEES -
+####             TFM - REASONS FOR EMPLOYEE TURNOVER -
 
 https://github.com/MariaGamero/TFM-ReasonsforEmployeeTurnover
 
@@ -169,6 +169,7 @@ __Conclusions:__
  
 ## -------------------------------------------------------------------------
 #### 1.5.7.- Performance distribution by employee & department
+
 ```{r echo = FALSE, warning = FALSE}
 qplot(last_evaluation,data=hr_data,fill=department)+
       facet_grid(~left)+
@@ -186,3 +187,6 @@ qplot(work_accident,data=hr_data,fill=left)+
       xlab(" ")+ ylab("Number of employees")
 ```
 
+__Conclusions:__
+
+ + As I could check in the previous section, there isn't seemed to be a direct relation between accidents and leaving the company.
