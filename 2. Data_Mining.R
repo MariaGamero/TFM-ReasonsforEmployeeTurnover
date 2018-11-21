@@ -22,7 +22,7 @@ setwd("~/TFM/TFM_TurnOver_Ratio")
 hr_data <- read.csv("data/HR_data_cleaned.csv",stringsAsFactors = FALSE)
 
 ## -------------------------------------------------------------------------
-##### 2.3. Quick review of DataSet #####
+##### 2.3. Quick review of the dataset #####
 
 str(hr_data)
 head(hr_data)
@@ -47,12 +47,12 @@ head(people_who_leave)
 summary(people_who_leave)
 
 ## -------------------------------------------------------------------------
-##### 2.5. Variables Treatment #####
+##### 2.5. Variables treatment #####
 people_who_leave_numericos=dummy.data.frame(people_who_leave, dummy.class="character" )
 
 
 ## -------------------------------------------------------------------------
-##### 2.6. Model gegmentation RFM 12M  #####
+##### 2.6. Model segmentation RFM 12M  #####
 
 #First of all, I need to change the scale, calculating the mean and standard deviation of the entire vector. 
 #I am not changing the data, rather I am changing the scale (the axis values when plotting)
@@ -124,7 +124,7 @@ aggregate(people_who_leave_numericos, by = list(people_who_leave_numericos$Segme
 
 
 ## -------------------------------------------------------------------------
-##### 2.8. Visual representation and conclusions #####
+##### 2.8. Visual representation & conclusions #####
 
 people_who_leave_numericos$Segmentos <- as.factor(people_who_leave_numericos$Segmentos)
 Clusters <-factor(people_who_leave_numericos$Segmentos,levels=c(1,2,3),labels=c("1.Satisfied","2.Frustrated","3.Overworked")) 
@@ -155,7 +155,7 @@ ClusterGraph
   #work that allow greater work-life balance for the employee  
 
 ## -------------------------------------------------------------------------
-##### 2.9. Saving Cluster plot #####
+##### 2.9. Saving the cluster plot #####
 
 ggsave("ClusterGraph.jpg",width = 12, height = 8)
 
