@@ -20,7 +20,7 @@ I have always been interested in themes related to human relations so, I have do
 
 # The study case is divided as follows:
 
-## 0. Load the dataset, scrub and explore the data by making some basic visualizations 
+## 0. Load the dataset, scrub and explore the data by making some basic visualizations :
 To understand the information included in the dataset and be sure that I am working with cleaned data — data that is organized, complete, recent, and generally high quality.
 
 - _Programming languaje_: Python
@@ -29,7 +29,7 @@ To understand the information included in the dataset and be sure that I am work
 
 - _Programming languaje_: R Markdown. 
 
-The result has been published in the following link: [RPubs](http://rpubs.com/Gamer/441414) publication.
+The result has been published in the following link: [RPubs](http://rpubs.com/Gamer/441440) publication.
 
 ## 2. Data Mining with R: 
 The aim is to segregate groups with similar traits and assign them into clusters based on feature similarity. I will use k-means clustering. The graph/image resulted of the anaysis has been keeped into "img" folder.
@@ -38,7 +38,7 @@ The aim is to segregate groups with similar traits and assign them into clusters
 
 Using classification or clustering methods in HR, companies can work on target areas or departments, even segment employees based on performance, evaluations or satisfaction level monitoring, avoiding possible future "brain drain".
 
-## 3. Machine Learning
+## 3. Machine Learning:
 Using machine learning tools, I will try to predict whether the employee will leave the company or not indicating which is the best model to get it. 
 
 - _Programming languaje_: Python
