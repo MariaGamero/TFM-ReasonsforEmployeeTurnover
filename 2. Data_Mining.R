@@ -1,9 +1,9 @@
 ## -------------------------------------------------------------------------
-##             TFM - REASONS FOR TURNOVER EMPLOYEES -
+##             TFM - REASONS FOR EMPLOYEE TURNOVER -
 ## -------------------------------------------------------------------------
 ##                 PART 2: CLUSTER ANALYSIS
 ## -------------------------------------------------------------------------
-##### 1. Import Libraries #####
+##### 2.1. Import libraries #####
 
 if(!require("dummies")){
   install.packages("dummies")
@@ -17,19 +17,19 @@ library(ggplot2)
 setwd("~/TFM/TFM_TurnOver_Ratio")
 
 ## -------------------------------------------------------------------------
-##### 2. Loading Data #####
+##### 2.2. Loading data #####
 
 hr_data <- read.csv("data/HR_data_cleaned.csv",stringsAsFactors = FALSE)
 
 ## -------------------------------------------------------------------------
-##### 3. Quick review of DataSet #####
+##### 2.3. Quick review of DataSet #####
 
 str(hr_data)
 head(hr_data)
 summary(hr_data)
 
 ## -------------------------------------------------------------------------
-##### 4. Filtering by employees who left #####
+##### 2.4. Filtering by employees who left #####
 
 #Company is interested in knowing the type of employees who left the company
 #in order to determine which are the most valuables and so, the ones it has to retain.
@@ -41,18 +41,18 @@ people_who_leave <- hr_data %>%
 #Now, I can extract the column "left" in the analysis.
 people_who_leave <- people_who_leave[ ,!colnames(people_who_leave)=="left"]
 
-#Quick review of this new DataSet
+#Quick review of this new dataset
 str(people_who_leave)
 head(people_who_leave)
 summary(people_who_leave)
 
 ## -------------------------------------------------------------------------
-##### 5. Variables Treatment #####
+##### 2.5. Variables Treatment #####
 people_who_leave_numericos=dummy.data.frame(people_who_leave, dummy.class="character" )
 
 
 ## -------------------------------------------------------------------------
-##### 6. Model Segmentation RFM 12M  #####
+##### 2.6. Model gegmentation RFM 12M  #####
 
 #First of all, I need to change the scale, calculating the mean and standard deviation of the entire vector. 
 #I am not changing the data, rather I am changing the scale (the axis values when plotting)
@@ -99,11 +99,11 @@ table(people_who_leave_numericos$Segmentos)
 aggregate(people_who_leave_numericos, by = list(people_who_leave_numericos$Segmentos), mean)
 
 ## -------------------------------------------------------------------------
-##### 7. Determine the optimal number of clusters (Elbow Method) #####
+##### 2.7. Determine the optimal number of clusters (Elbow Method) #####
 
 #One method to validate the number of clusters is the elbow method. 
 #The goal is to choose a small value of "k" that still has a low sum of squared errors, 
-#and the elbow usually represents where we start to have diminishing returns by increasing k.
+#The location of a bend (knee) in the plot is generally considered as an indicator of the appropriate number of clusters
 
 Intra <- (nrow(people_who_leave_numericos)-1)*sum(apply(people_who_leave_numericos,2,var))
 for (i in 2:15) Intra[i] <- sum(kmeans(people_who_leave_numericos, centers=i)$withinss)
@@ -124,7 +124,7 @@ aggregate(people_who_leave_numericos, by = list(people_who_leave_numericos$Segme
 
 
 ## -------------------------------------------------------------------------
-##### 8. Visual Representation and conclusions #####
+##### 2.8. Visual representation and conclusions #####
 
 people_who_leave_numericos$Segmentos <- as.factor(people_who_leave_numericos$Segmentos)
 Clusters <-factor(people_who_leave_numericos$Segmentos,levels=c(1,2,3),labels=c("1.Satisfied","2.Frustrated","3.Overworked")) 
@@ -135,7 +135,9 @@ ClusterGraph <- ggplot(people_who_leave_numericos, aes(satisfaction_level, last_
 
 ClusterGraph 
 
-#The graph shows 3 distinct clusters for employees who left the company:
+#CONCLUSIONS:
+
+  #The graph shows 3 distinct clusters for employees who left the company:
 
   #1.High satisfaction level and high performance: people well valorated and valious for company. 
   #Company should focus on them and try to monitoring and manage their needs.
@@ -152,6 +154,10 @@ ClusterGraph
   #The company must also try to better understand this group of employees by offering, for example, more flexible forms of 
   #work that allow greater work-life balance for the employee  
 
-#Saving graph (See in "img" folder in Github)
+## -------------------------------------------------------------------------
+##### 2.9. Saving Cluster plot #####
+
 ggsave("ClusterGraph.jpg",width = 12, height = 8)
+
+#See "img" folder included in Github repository
 
